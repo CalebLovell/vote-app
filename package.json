@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "An App that lets you vote and get results in many different voting systems.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Caleb Lovell <caleblovell1@gmail.com>",
   "dependencies": {
     "gatsby": "^2.18.4",
     "gatsby-image": "^2.2.34",
@@ -19,6 +19,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "eslint": "^6.7.2",
     "prettier": "^1.19.1"
   },
   "keywords": [
