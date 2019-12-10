@@ -1,5 +1,5 @@
 {
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "env": {
         "node": true,
         "es6": true
@@ -38,7 +38,7 @@
         "no-shadow": ["error", { "allow": ["err", "resolve", "reject", "cb"] }],
         "no-trailing-spaces": ["error"],
         "no-var": "error",
-        "object-curly-newline": ["never", {
+        "object-curly-newline": ["off", {
             "ObjectExpression": "always",
             "ImportDeclaration": "never",
             "ExportDeclaration": "never"
