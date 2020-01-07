@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Caleb Lovell <caleblovell1@gmail.com>",
   "dependencies": {
+    "firebase": "^7.6.1",
     "gatsby": "^2.18.4",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.30",
@@ -38,6 +39,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "lint": "eslint **/*.{js,jsx}",
+    "fix": "eslint --fix ./src",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

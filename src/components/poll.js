@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const PollContainer = styled.div`
@@ -9,6 +8,7 @@ const PollContainer = styled.div`
 `;
 
 const Poll = () => {
+	// eslint-disable-next-line no-unused-vars
 	const [pollType, setPollType] = useState(`single`);
 
 	return (
