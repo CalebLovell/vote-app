@@ -21,6 +21,9 @@ class Firebase {
 		this.auth = app.auth();
 		this.store = app.firestore;
 	}
+	get votes() {
+		return this.store().collection(`votes`);
+	}
 }
 
-export default Firebase;
+export default new Firebase;
