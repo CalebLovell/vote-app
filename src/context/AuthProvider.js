@@ -1,52 +1,38 @@
-import React, { useReducer, createContext, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Firebase from '../services/firebase';
+import React, { useReducer } from 'react';
 
-const AuthStateContext = React.createContext();
-const AuthDispatchContext = React.createContext();
+export const AuthStateContext = React.createContext();
+export const AuthDispatchContext = React.createContext();
 
 const initialState = {
-	user: {},
+	user: { name: `Anonymous`, status: `Not Logged In` },
 };
 
 const reducer = (state, action) => {
 	switch (action.type) {
-		case `EMAIL`: {
+		case `LOG_IN`: {
 			return {
 				...state,
-				user: {},
+				user: { name: `Caleb`, status: `Logged In` },
 			};
 		}
-		case `ANON`:
-			return Firebase.auth
-				.signInAnonymously()
-				.catch(error => {
-					// eslint-disable-next-line no-console
-					console.error(error);
-					// TODO: notify the user of the error
-					return error;
-				});
-
-		default: {
-			const reason = `Bad Action Type`;
-			console.error(reason);
-			return Promise.reject(reason);
+		case `LOG_OUT`: {
+			return {
+				...state,
+				user: { name: `Anonymous`, status: `Logged Out` },
+			};
 		}
+		default:
+			throw new Error(`Bad Action Type`);
 	}
 };
 
 const AuthProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
-	// useEffect(console.log(Firebase.auth), []);
 	return (
 		<AuthStateContext.Provider value={state}>
-			<AuthDispatchContext.Provider>{children}</AuthDispatchContext.Provider>
+			<AuthDispatchContext.Provider value={dispatch}>{children}</AuthDispatchContext.Provider>
 		</AuthStateContext.Provider>
 	);
 };
 
 export default AuthProvider;
-
-// AuthProvider.propTypes = {
-// 	children: PropTypes.func.isRequired,
-// };

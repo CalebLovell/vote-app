@@ -1,6 +1,6 @@
-// import React from 'react';
-// import AuthContext from './src/context/AuthContext';
+import React from 'react';
+import AuthProvider from './src/context/AuthProvider';
 
-// export function wrapRootElement({ element }) {
-// 	return <AuthContext>{element}</AuthContext>;
-// }
+export const wrapRootElement = ({ element }) => {
+	return <AuthProvider>{element}</AuthProvider>;
+};

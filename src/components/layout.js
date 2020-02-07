@@ -10,7 +10,6 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import AuthProvider from '../context/AuthProvider';
 
 import Header from './header';
 import SiteWrap from './SiteWrap';
@@ -38,9 +37,7 @@ const Layout = ({ children }) => {
 				<title>{data.site.siteMetadata.title}</title>
 				<meta name='description' content={data.site.siteMetadata.description} />
 			</Helmet>
-			<AuthProvider>
-				<Header siteTitle={data.site.siteMetadata.title} />
-			</AuthProvider>
+			<Header siteTitle={data.site.siteMetadata.title} />
 			<SiteWrapNoPaddingTop>
 				<main>{children}</main>
 				<footer>
