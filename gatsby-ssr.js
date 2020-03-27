@@ -1,7 +1,6 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react';
+import AuthProvider from './src/context/AuthProvider';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => {
+	return <AuthProvider>{element}</AuthProvider>;
+};
